@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#18212c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="롤러3 불량">
+<title>롤러 #3 불량 관리</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <nav class="tabs" aria-label="화면">
+    <div class="side-title">중형 롤러 #3<br><span>생산 불량 관리</span></div>
+    <a href="#record" data-v="record"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>기록</span></a>
+    <a href="#prod" data-v="prod"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10l5 3V10l5 3V6l6 4v10z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>생산량</span></a>
+    <a href="#month" data-v="month"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M7 16V10M12 16V5M17 16v-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span>월별 현황</span></a>
+    <a href="#settings" data-v="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>설정</span></a>
+  </nav>
+
+  <div class="main">
+    <header class="monthbar">
+      <button type="button" class="mb-arrow" id="m-prev" aria-label="이전 달">‹</button>
+      <div class="mb-label" id="m-label"></div>
+      <button type="button" class="mb-arrow" id="m-next" aria-label="다음 달">›</button>
+    </header>
+    <div class="alert" id="alert-store" hidden>이 브라우저는 기록을 저장할 수 없습니다. 시크릿 모드가 아닌 일반 창에서 열어 주세요.</div>
+    <div class="alert" id="alert-backup" hidden><span id="alert-backup-text"></span><a href="#settings" class="alert-btn" id="alert-backup-btn">백업하기</a></div>
+    <main id="page"></main>
+  </div>
+</div>
+
+<div class="sheet-wrap" id="sheet" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+    <div class="sheet-title" id="sheet-title"></div>
+    <div class="sheet-body" id="sheet-body"></div>
+    <div class="sheet-actions" id="sheet-actions"></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="js/core.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/record.js"></script>
+<script src="js/prod.js"></script>
+<script src="js/month.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
